@@ -6,6 +6,7 @@ export default {
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
         fredoka: ["Fredoka", "sans-serif"],
+        banger: ["Bangers", "system-ui"],
       },
       colors: {
         "orange-start": "#ff7e5f",

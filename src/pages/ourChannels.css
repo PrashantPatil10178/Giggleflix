@@ -1,0 +1,8 @@
+.outline-text {
+  color: transparent; /* Makes the middle transparent */
+  -webkit-text-stroke: 3px #fff; /* Sets the outline color and width */
+}
+.outline-black {
+  color: transparent; /* Makes the middle transparent */
+  -webkit-text-stroke: 3px #000; /* Sets the outline color and width */
+}

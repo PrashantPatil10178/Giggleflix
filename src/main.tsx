@@ -11,6 +11,7 @@ import ReactDOM from "react-dom/client";
 
 import "./index.css";
 import OurServices from "./pages/OurServices";
+import OurChannels from "./pages/OurChannels";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -18,6 +19,7 @@ const router = createBrowserRouter(
       <Route path="/" element={<App />} />
       <Route path="/about" element={<About />} />
       <Route path="/services" element={<OurServices />} />
+      <Route path="/ourChannels" element={<OurChannels />} />
     </>
   )
 );

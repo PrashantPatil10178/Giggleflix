@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Logo from "../assets/Flix.png";
+
 import * as Icons from "react-feather";
 import "./Nav.css";
 import AOS from "aos";
