@@ -138,7 +138,7 @@ function OurChannels() {
         </div>
       </div>
 
-      <div className="" style={{ backgroundImage: URL() }}></div>
+      <div className="" style={{}}></div>
     </>
   );
 }
