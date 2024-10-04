@@ -307,6 +307,13 @@ function OurChannels() {
           data-aos="fade-up"
           data-aos-duration="1000"
         >
+          <img
+            src={Riddhu}
+            alt="Frog Character"
+            className="w-full md:w-[26rem] h-auto mt-6"
+            data-aos="zoom-in"
+            data-aos-duration="1000"
+          />
           <div className="font-fredoka text-center md:text-left">
             <h1
               className="text-5xl md:text-7xl font-extrabold text-pink-300 drop-shadow-lg font-blueberry"
@@ -344,13 +351,6 @@ function OurChannels() {
               Birthday: October 27th
             </p>
           </div>
-          <img
-            src={Riddhu}
-            alt="Frog Character"
-            className="w-full md:w-[26rem] h-auto mt-6"
-            data-aos="zoom-in"
-            data-aos-duration="1000"
-          />
         </div>
       </div>
 
