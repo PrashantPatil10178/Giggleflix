@@ -19,7 +19,7 @@ const router = createBrowserRouter(
       <Route path="/" element={<App />} />
       <Route path="/about" element={<About />} />
       <Route path="/services" element={<OurServices />} />
-      <Route path="/ourChannels" element={<OurChannels />} />
+      <Route path="/channels" element={<OurChannels />} />
     </>
   )
 );

@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import Nav from "../components/Nav";
 import AboutUs from "../assets/AboutUs.jpg";
-import BGText from "../assets/test.webp";
 import newBG from "../assets/mainDivBg.png";
 import AOS from "aos";
 
@@ -127,15 +126,28 @@ function About() {
         <div
           className="absolute inset-0 bg-no-repeat"
           style={{
-            backgroundImage: `url(${BGText})`,
             backgroundSize: "50%", // Adjust the size as needed
             backgroundPosition: "bottom left", // Adjust the position as needed
             marginBottom: "20px",
           }}
         >
-          <div className="flex items-center justify-end h-full"></div>
+          <div className="absolute bottom-0 left-0 flex items-start p-4">
+            <div className="text-white max-w-4xl bg-black bg-opacity-50 rounded-md p-6">
+              <h2 className="text-6xl  text-yellow-300 font-fredoka font-bold mb-2">
+                About Giggleflix Studios
+              </h2>
+              <p className="font-fredoka text-xl">
+                Giggleflix Studios is an animation studio based out of Mumbai,
+                India. Founded out of passion and curiosity, our team aims to
+                bring magic and joy to every little heart. We aim to create
+                songs and stories that educate, entertain, and elevate every
+                dream.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
+
       <div className="bg-gradient-to-b from-[#EA9A12] to-[#EC9F11] flex items-center justify-center w-full font-fredoka py-16 px-4">
         <div
           className="flex flex-col lg:flex-row items-center justify-between w-full max-w-6xl mx-auto gap-12"

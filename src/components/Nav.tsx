@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
 import Logo from "../assets/Flix.png";
-
 import * as Icons from "react-feather";
 import "./Nav.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Nav(): JSX.Element {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -42,20 +41,56 @@ function Nav(): JSX.Element {
         <div className="flex items-center">
           <img src={Logo} className="h-20 max-md:h-14" alt="Logo" />
         </div>
-        <div className="hidden md:flex items-center gap-8 font-fredoka font-semibold text-2xl text-white">
-          <ul className="flex items-center list-none gap-8">
-            <li data-aos="fade-up">Home</li>
-            <li data-aos="fade-up" data-aos-delay="100">
+        <div className="hidden md:flex items-center font-fredoka font-semibold text-2xl text-white">
+          <ul className="flex items-center list-none gap-3">
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                `p-2 rounded-full font-bold text-lg sm:text-xl ${
+                  isActive
+                    ? "bg-gradient-to-r from-[#fdce10] to-[#ffb1d2] text-black"
+                    : ""
+                }`
+              }
+            >
+              Home
+            </NavLink>
+            <NavLink
+              to="/services"
+              className={({ isActive }) =>
+                `p-2 rounded-full font-bold text-lg sm:text-xl ${
+                  isActive
+                    ? "bg-gradient-to-r from-[#fdce10] to-[#ffb1d2] text-black"
+                    : ""
+                }`
+              }
+            >
               Our Services
-            </li>
-            <li data-aos="fade-up" data-aos-delay="200">
+            </NavLink>
+            <NavLink
+              to="/channels"
+              className={({ isActive }) =>
+                `p-2 rounded-full font-bold text-lg sm:text-xl ${
+                  isActive
+                    ? "bg-gradient-to-r from-[#fdce10] to-[#ffb1d2] text-black"
+                    : ""
+                }`
+              }
+            >
               All Channels
-            </li>
-            <Link to="/about">
-              <li data-aos="fade-up" data-aos-delay="300">
-                About
-              </li>
-            </Link>
+            </NavLink>
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
+                `p-2 rounded-full font-bold text-lg sm:text-xl ${
+                  isActive
+                    ? "bg-gradient-to-r from-[#fdce10] to-[#ffb1d2] text-black"
+                    : ""
+                }`
+              }
+            >
+              About
+            </NavLink>
           </ul>
         </div>
         <div className="hidden md:flex items-center gap-6">
@@ -95,33 +130,55 @@ function Nav(): JSX.Element {
       </div>
       {isMenuOpen && (
         <div className="md:hidden w-full flex flex-col items-center bg-gradient-to-r from-[#fdce10] to-[#ffb1d2] p-4">
-          <ul className="flex flex-col items-center list-none gap-4 font-fredoka font-semibold text-2xl text-white">
-            <li data-aos="fade-up" className="underline underline-offset-8">
+          <ul className="flex flex-col items-center list-none">
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                `p-2 rounded-full font-bold text-lg sm:text-xl ${
+                  isActive
+                    ? "bg-gradient-to-r from-[#fdce10] to-[#ffb1d2] text-black"
+                    : ""
+                }`
+              }
+            >
               Home
-            </li>
-            <li
-              data-aos="fade-up"
-              data-aos-delay="100"
-              className="underline-animation"
+            </NavLink>
+            <NavLink
+              to="/services"
+              className={({ isActive }) =>
+                `p-2 rounded-full font-bold text-lg sm:text-xl ${
+                  isActive
+                    ? "bg-gradient-to-r from-[#fdce10] to-[#ffb1d2] text-black"
+                    : ""
+                }`
+              }
             >
               Our Services
-            </li>
-            <li
-              data-aos="fade-up"
-              data-aos-delay="200"
-              className="underline-animation"
+            </NavLink>
+            <NavLink
+              to="/channels"
+              className={({ isActive }) =>
+                `p-2 rounded-full font-bold text-lg sm:text-xl ${
+                  isActive
+                    ? "bg-gradient-to-r from-[#fdce10] to-[#ffb1d2] text-black"
+                    : ""
+                }`
+              }
             >
               All Channels
-            </li>
-            <Link to="/about">
-              <li
-                data-aos="fade-up"
-                data-aos-delay="300"
-                className="underline-animation"
-              >
-                About
-              </li>
-            </Link>
+            </NavLink>
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
+                `p-2 rounded-full font-bold text-lg sm:text-xl ${
+                  isActive
+                    ? "bg-gradient-to-r from-[#fdce10] to-[#ffb1d2] text-black"
+                    : ""
+                }`
+              }
+            >
+              About
+            </NavLink>
           </ul>
           <div className="flex items-center gap-6 mt-4">
             <Icons.Youtube
