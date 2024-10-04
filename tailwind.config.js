@@ -7,6 +7,8 @@ export default {
         poppins: ["Poppins", "sans-serif"],
         fredoka: ["Fredoka", "sans-serif"],
         banger: ["Bangers", "system-ui"],
+        caveat: ["Caveat", "cursive"],
+        blueberry: ["blueberry", "sans-serif"],
       },
       colors: {
         "orange-start": "#ff7e5f",

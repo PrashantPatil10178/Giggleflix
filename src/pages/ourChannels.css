@@ -6,3 +6,19 @@
   color: transparent; /* Makes the middle transparent */
   -webkit-text-stroke: 3px #000; /* Sets the outline color and width */
 }
+/* In your styles.css or a separate CSS file */
+.text-outline {
+  position: relative;
+  color: white; /* Text color */
+  font-weight: bold; /* Or your desired weight */
+}
+
+.text-outline::before {
+  content: attr(data-text); /* Use the original text */
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: black; /* Outline color */
+  z-index: -1; /* Place behind the original text */
+  transform: translate(-1px, -1px); /* Offset for sharpness */
+}
