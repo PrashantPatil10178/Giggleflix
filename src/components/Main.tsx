@@ -19,9 +19,9 @@ const Main = () => {
       throttleDelay: 99,
       offset: 120,
       delay: 0,
-      duration: 800, // Increased duration for smoother animation
-      easing: "ease-out", // Added easing for a smoother transition
-      once: true, // Animation occurs only once
+      duration: 800,
+      easing: "ease-out",
+      once: true,
       mirror: false,
       anchorPlacement: "top-bottom",
     });
@@ -85,12 +85,14 @@ const Main = () => {
         >
           So buckle up, little adventurers! 🌟
         </p>
-        <button
-          data-aos="fade-up"
-          className="bg-gradient-to-r from-[#fdce10] to-[#ffb1d2] text-black p-3 px-8 sm:px-10 rounded-full font-bold text-lg sm:text-xl m-5"
-        >
-          Learn More
-        </button>
+        <a href={"/about"}>
+          <button
+            data-aos="fade-up"
+            className="bg-gradient-to-r from-[#fdce10] to-[#ffb1d2] text-black p-3 px-8 sm:px-10 rounded-full font-bold text-lg sm:text-xl m-5"
+          >
+            Learn More
+          </button>
+        </a>
       </div>
     </div>
   );

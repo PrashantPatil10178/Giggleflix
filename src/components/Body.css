@@ -1,0 +1,11 @@
+/* Custom styles to make the YouTube video cover the full screen */
+.youtube-bg iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw; /* Full width of the viewport */
+  height: 100vh; /* Full height of the viewport */
+  object-fit: cover;
+  pointer-events: none; /* Disable interaction with the video */
+  z-index: -1; /* Ensure it stays behind the content */
+}

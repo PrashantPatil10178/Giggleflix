@@ -89,13 +89,16 @@ function OurChannels() {
             <img
               src={HindiChannel}
               alt="Hindi Characters"
-              className="w-96 h-auto mx-auto"
+              className="w-96 h-auto mx-auto mt-5"
             />
-            <img
-              src={HindiButton}
-              alt="Kaccha Nimboo Hindi"
-              className="mx-auto w-96 mb-2"
-            />
+            <a href="http://www.youtube.com/@KacchaNimboo_gflix">
+              {" "}
+              <img
+                src={HindiButton}
+                alt="Kaccha Nimboo Hindi"
+                className="mx-auto w-64 mb-2"
+              />
+            </a>
           </div>
 
           {/* Marathi Channel Section */}
@@ -110,11 +113,13 @@ function OurChannels() {
               alt="Marathi Characters"
               className="w-96 h-auto mx-auto"
             />
-            <img
-              src={MarathiButton}
-              alt="Kaccha Nimboo Marathi"
-              className="mx-auto w-96 mb-2"
-            />
+            <a href="http://www.youtube.com/@KacchaNimbooMarathi_gflix">
+              <img
+                src={MarathiButton}
+                alt="Kaccha Nimboo Marathi"
+                className="mx-auto w-60 mb-2"
+              />
+            </a>
           </div>
         </div>
       </div>
@@ -158,11 +163,14 @@ function OurChannels() {
               alt="English Characters"
               className="w-96 h-auto mx-auto"
             />
-            <img
-              src={EnglishButton}
-              alt="Kaccha Nimboo English"
-              className="mx-auto w-96 mb-2"
-            />
+            <a href="http://www.youtube.com/@LalaLemon_gflixstudios">
+              {" "}
+              <img
+                src={EnglishButton}
+                alt="Kaccha Nimboo English"
+                className="mx-auto w-64 mb-2"
+              />
+            </a>
           </div>
 
           {/* Spanish Channel Section */}
@@ -175,12 +183,12 @@ function OurChannels() {
             <img
               src={SpanishChannel}
               alt="Spanish Characters"
-              className="w-96 h-auto mx-auto"
+              className="w-96 h-auto mx-auto mt-11"
             />
             <img
               src={SpanishButton}
               alt="Kaccha Nimboo Spanish"
-              className="mx-auto w-96 mb-2"
+              className="mx-auto w-64 mb-2"
             />
           </div>
         </div>
@@ -322,7 +330,7 @@ function OurChannels() {
             >
               Riddhu
               <span className="text-4xl md:text-5xl font-extrabold text-pink-300 ">
-                (The Foddie)
+                (The Foodie)
               </span>
             </h1>
             <p

@@ -3,14 +3,15 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Logo from "../assets/Flix.png";
 import FooterImage from "../assets/Footer.png";
-import { Youtube, Instagram } from "react-feather";
+import { Youtube, Instagram, Linkedin } from "react-feather";
 import ContactForm from "./Form";
+import newBG from "../assets/newBG.png";
 
 function Footer(): JSX.Element {
   useEffect(() => {
     AOS.init({
-      duration: 1000, // Animation duration
-      once: true, // Whether animation should happen only once
+      duration: 1000,
+      once: true,
     });
   }, []);
 
@@ -19,12 +20,20 @@ function Footer(): JSX.Element {
 
   return (
     <>
-      <div className="font-fredoka bg-gradient-to-b from-black to-gray-900 min-h-screen w-full flex flex-col justify-around p-6 md:p-12">
+      <div
+        className="font-fredoka min-h-screen w-full flex flex-col justify-around p-6 md:p-12"
+        style={{
+          backgroundImage: `url(${newBG})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
         <div
-          className="w-full flex flex-col md:flex-row items-start justify-around mb-6 md:mb-12"
+          className="w-full flex flex-row md:flex-row items-start justify-around mb-6 md:mb-12"
           data-aos="fade-up"
         >
-          <div className="w-64 max-md:w-44 mb-6 md:mb-0" data-aos="fade-right">
+          <div className="w-72 max-sm:w-36  mb-6 md:mb-0" data-aos="fade-right">
             <img src={Logo} alt="Flix Logo" className="w-full" />
           </div>
           <div
@@ -32,7 +41,7 @@ function Footer(): JSX.Element {
             data-aos="fade-left"
           >
             <a
-              href="https://youtube.com"
+              href="https://www.youtube.com/@KacchaNimboo_gflix"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -43,11 +52,22 @@ function Footer(): JSX.Element {
               />
             </a>
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/kacchanimbooofficial/"
               target="_blank"
               rel="noopener noreferrer"
             >
               <Instagram
+                stroke="white"
+                size={44}
+                className="hover:text-pink-500 transition duration-300"
+              />
+            </a>
+            <a
+              href="https://www.instagram.com/kacchanimbooofficial/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Linkedin
                 stroke="white"
                 size={44}
                 className="hover:text-pink-500 transition duration-300"
@@ -70,7 +90,7 @@ function Footer(): JSX.Element {
             className="w-full h-auto md:w-1/2 mb-6 md:mb-0 flex flex-col items-center gap-4"
             data-aos="zoom-in"
           >
-            <h1 className="text-white font-semibold">Contact Us</h1>
+            <h1 className="text-white font-semibold text-3xl">Contact Us</h1>
             <div className="w-full p-4">
               <ContactForm />
             </div>

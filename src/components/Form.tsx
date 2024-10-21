@@ -10,6 +10,7 @@ const ContactForm = () => {
     lastName: "",
     email: "",
     message: "",
+    botField: "", // Add a botField for the honeypot
   });
   const [loading, setLoading] = useState(false);
 
@@ -29,6 +30,18 @@ const ContactForm = () => {
     e.preventDefault();
     setLoading(true);
 
+    // Honeypot check: if botField is filled, assume it's a bot and block the submission
+    if (formData.botField) {
+      message.error({
+        content: (
+          <p className="font-fredoka">Bot detected! Submission blocked.</p>
+        ),
+        duration: 3,
+      });
+      setLoading(false);
+      return;
+    }
+
     try {
       const response = await axios.post(
         "https://giggleflixstudios.com/api/api.php",
@@ -44,9 +57,7 @@ const ContactForm = () => {
 
       if (response.data.status === "success") {
         message.success({
-          content: (
-            <p className=" font-fredoka">Form submitted successfully!</p>
-          ),
+          content: <p className="font-fredoka">Form submitted successfully!</p>,
           duration: 3,
         });
         setFormData({
@@ -54,11 +65,12 @@ const ContactForm = () => {
           lastName: "",
           email: "",
           message: "",
+          botField: "", // Reset the botField
         });
       } else {
         message.error({
           content: (
-            <p className=" font-fredoka">
+            <p className="font-fredoka">
               Error submitting form: {response.data.message}
             </p>
           ),
@@ -69,9 +81,7 @@ const ContactForm = () => {
       setLoading(false);
       message.error({
         content: (
-          <p className=" font-fredoka">
-            Error submitting form: {error.message}
-          </p>
+          <p className="font-fredoka">Error submitting form: {error.message}</p>
         ),
         duration: 3,
       });
@@ -81,7 +91,7 @@ const ContactForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="w-full max-w-lg mx-auto p-4 bg-gray-900 shadow-md rounded-lg lg:max-w-xl xl:max-w-2xl"
+      className="w-full max-w-lg mx-auto p-4 bg-transparent shadow-md rounded-lg lg:max-w-xl xl:max-w-2xl"
       data-aos="fade-up"
     >
       <div className="mb-6" data-aos="fade-right">
@@ -150,13 +160,27 @@ const ContactForm = () => {
           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32"
         />
       </div>
+
+      {/* Honeypot Field (hidden from real users) */}
+      <div style={{ display: "none" }}>
+        <label>
+          Do not fill this field:
+          <input
+            name="botField"
+            type="text"
+            value={formData.botField}
+            onChange={handleChange}
+          />
+        </label>
+      </div>
+
       <div className="flex justify-center" data-aos="fade-up">
         <button
           type="submit"
           className="bg-gradient-to-r from-[#fdce10] to-[#ffb1d2] text-black p-3 px-8 sm:px-10 rounded-full font-semibold text-lg sm:text-xl flex items-center justify-center"
           disabled={loading} // Disable button when loading
         >
-          {loading ? <Spin size="small" /> : "Submit"}{" "}
+          {loading ? <Spin size="small" /> : "Submit"}
         </button>
       </div>
     </form>
