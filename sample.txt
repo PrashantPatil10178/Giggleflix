@@ -1,5 +1,0 @@
-// Database credentials
-$servername = "localhost";
-$username = "u510396712_giggleflix";
-$password = "vZ!4tqh?3";
-$dbname = "u510396712_giggleflix";
